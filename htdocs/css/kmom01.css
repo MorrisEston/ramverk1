@@ -1,0 +1,39 @@
+/* Stylsheet for kmom01 */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(53, 87, 140);
+}
+
+h1, h2, h3, h4, p, a {
+    color: #fff;
+}
+
+.wrap-all {
+    box-sizing: border-box;
+    display: block;
+}
+
+.rm-navbar {
+    float: right;
+}
+
+.outer-wrap-header {
+    box-sizing: border-box;
+    display: block;
+    height: 48px;
+    margin-bottom: 12px;
+}
+
+.region-flash, .site-logo, .site-logo-text-icon, .outer-wrap-flash {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+
+.outer-wrap-footer {
+    background-color: #673383;
+    padding-top: 24px;
+    padding-bottom: 48px;
+}

@@ -28,19 +28,39 @@ class ControllerJSON implements ContainerInjectableInterface
         // $title = "JSONvoorhees";
         $adress = $this->di->get("request")->getGet("ipcheck");
         // $page = $this->di->get("page");
+        $location = "";
+        $num = 2;
 
 
         $res = "";
         if (filter_var($adress, FILTER_VALIDATE_IP)) {
             $res = ("$adress is a valid IP address");
+            $location = new ipManLocation();
+            $longlat = $location->location($adress);
+            $longlat = json_decode($longlat);
+            $num = 1;
         } else {
             $res = ("$adress is not a valid IP address");
+            $num = 0;
         };
 
-        $json = [
-            "adress" => $adress,
-            "res" => $res,
-        ];
+        if ($num == 1) {
+            $json = [
+                "adress" => $adress,
+                "res" => $res,
+                "type" => $longlat->type,
+                "country" => $longlat->country_name,
+                "city" => $longlat->city,
+                "longitude" => $longlat->longitude,
+                "latitude" => $longlat->latitude,
+            ];
+        } else {
+            $json = [
+                "adress" => $adress,
+                "res" => $res,
+            ];
+        }
+
 
         return [$json];
     }

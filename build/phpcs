@@ -1,0 +1,10 @@
+
+FILE: ...morris/dbwebb-kurser/ramverk1/me/redovisa/src/Controller/ipManLocation.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 5 | ERROR | Class name "ipManLocation" is not in PascalCase format
+--------------------------------------------------------------------------------
+
+Time: 1.72 secs; Memory: 8Mb
+
